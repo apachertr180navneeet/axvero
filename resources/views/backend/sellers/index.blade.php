@@ -247,12 +247,12 @@
                                             @if($shop->user->banned != 1)
                                                 <a href="javascript:void();" onclick="confirm_ban('{{route('sellers.ban', $shop->id)}}');" class="dropdown-item">
                                                     {{translate('Ban this seller')}}
-                                                    <i class="fa fa-ban text-danger" aria-hidden="true"></i>
+                                                    <i class="las la-ban text-danger" aria-hidden="true"></i>
                                                 </a>
                                             @else
                                                 <a href="javascript:void();" onclick="confirm_unban('{{route('sellers.ban', $shop->id)}}');" class="dropdown-item">
                                                     {{translate('Unban this seller')}}
-                                                    <i class="fa fa-check text-success" aria-hidden="true"></i>
+                                                    <i class="las la-check text-success" aria-hidden="true"></i>
                                                 </a>
                                             @endif
                                         @endcan

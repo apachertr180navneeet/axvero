@@ -181,12 +181,12 @@
                                 @if($shop->user->banned != 1)
                                 <a href="javascript:void();" onclick="confirm_ban('{{route('sellers.ban', $shop->id)}}');" class="dropdown-item fs-13">
                                     {{translate('Ban this seller')}}
-                                    <i class="fa fa-ban text-danger" aria-hidden="true"></i>
+                                    <i class="las la-ban text-danger" aria-hidden="true"></i>
                                 </a>
                                 @else
                                 <a href="javascript:void();" onclick="confirm_unban('{{route('sellers.ban', $shop->id)}}');" class="dropdown-item fs-13">
                                     {{translate('Unban this seller')}}
-                                    <i class="fa fa-check text-success" aria-hidden="true"></i>
+                                    <i class="las la-check text-success" aria-hidden="true"></i>
                                 </a>
                                 @endif
                                 @endcan
@@ -218,7 +218,7 @@
                     <div class="dropdown d-lg-none mb-2">
                         <button class="btn btn-light border dropdown-toggle" type="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v"></i>
+                            <i class="las la-ellipsis-v"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
                             <button class="dropdown-item d-flex align-items-center"  onclick="changeSellerTab(this, 'orders' , 'order_tab')">
@@ -287,12 +287,12 @@
                                 @if($shop->user->banned != 1)
                                 <a href="javascript:void();" onclick="confirm_ban('{{route('sellers.ban', $shop->id)}}');" class="dropdown-item fs-13">
                                     {{translate('Ban this seller')}}
-                                    <i class="fa fa-ban text-danger" aria-hidden="true"></i>
+                                    <i class="las la-ban text-danger" aria-hidden="true"></i>
                                 </a>
                                 @else
                                 <a href="javascript:void();" onclick="confirm_unban('{{route('sellers.ban', $shop->id)}}');" class="dropdown-item fs-13">
                                     {{translate('Unban this seller')}}
-                                    <i class="fa fa-check text-success" aria-hidden="true"></i>
+                                    <i class="las la-check text-success" aria-hidden="true"></i>
                                 </a>
                                 @endif
                                 @endcan

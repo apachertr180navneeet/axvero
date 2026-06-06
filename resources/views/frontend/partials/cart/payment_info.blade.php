@@ -118,7 +118,7 @@
                     <small>UPI / Card </small>
                 </div>
                 <div class="modern-check">
-                    <i class="fa fa-check"></i>
+                    <i class="las la-check"></i>
                 </div>
             </div>
         </label>

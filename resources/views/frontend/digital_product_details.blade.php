@@ -419,9 +419,9 @@
                                         <a href="{{ route('shop.visit', $detailedProduct->user->shop->slug) }}" class="text-reset d-block fw-700">
                                             {{ $detailedProduct->user->shop->name }}
                                             @if ($detailedProduct->user->shop->verification_status == 1)
-                                                <span class="ml-2"><i class="fa fa-check-circle" style="color:green"></i></span>
+                                                <span class="ml-2"><i class="las la-check-circle" style="color:green"></i></span>
                                             @else
-                                                <span class="ml-2"><i class="fa fa-times-circle" style="color:red"></i></span>
+                                                <span class="ml-2"><i class="las la-times-circle" style="color:red"></i></span>
                                             @endif
                                         </a>
                                         <div class="location opacity-70">{{ $detailedProduct->user->shop->address }}</div>
