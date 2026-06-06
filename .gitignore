@@ -38,4 +38,5 @@ _public_html.zip
 public/all
 /storage/logs/*
 /storage/framework/views/*
+/storage/*
 
