@@ -183,7 +183,7 @@
                         <th class="pl-0 fs-14 text-dark fw-700 border-top-0 pt-3 text-uppercase">{{ translate('Total') }}</th>
                         <td class="text-end fw-bold fs-5 text-primary pt-3">{{ single_price($total) }}</td>
                     </tr>
-                  @if(isset($is_bulk_buyer) && $is_bulk_buyer)
+                  @if($is_bulk_buyer)
                     <tr>
                         <th class="pl-0 fs-14 fw-400 text-dark">
                             Online Payment (40% via PayU)
