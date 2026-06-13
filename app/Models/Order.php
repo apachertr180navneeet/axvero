@@ -32,7 +32,7 @@ class Order extends Model
 
     public function shop()
     {
-        return $this->hasOne(Shop::class, 'user_id', 'seller_id');
+        return $this->belongsTo(Shop::class, 'seller_id', 'user_id');
     }
 
     public function pickup_point()

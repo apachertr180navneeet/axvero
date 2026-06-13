@@ -103,12 +103,22 @@ class SslcommerzController extends Controller
 
     public function success(Request $request)
     {
-        //echo "Transaction is Successful";
-
         $sslc = new SSLCommerz();
-        #Start to received these value from session. which was saved in index function.
         $tran_id = $request->value_a;
-        #End to received these value from session. which was saved in index function.
+
+        // Validate transaction with SSLCommerz API
+        $amount = 0;
+        $paymentType = $request->value_c;
+        if ($paymentType == 'cart_payment') {
+            $combined_order = CombinedOrder::find($request->value_b);
+            $amount = $combined_order ? $combined_order->grand_total : 0;
+        }
+        $validation = $sslc->orderValidate($tran_id, $amount, 'BDT', $request->all());
+        if (!$validation) {
+            flash(translate('Payment validation failed'))->error();
+            return redirect()->route('home');
+        }
+
         $payment = json_encode($request->all());
 
         if (isset($request->value_c)) {

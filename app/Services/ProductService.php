@@ -110,9 +110,9 @@ class ProductService
         }
         unset($collection['flat_shipping_cost']);
 
-        $slug = Str::slug($collection['name']);
+        $slug = Str::slug($collection['slug'] ?? $collection['name']);
         $same_slug_count = Product::where('slug', 'LIKE', $slug . '%')->count();
-        $slug_suffix = $same_slug_count ? '-' . $same_slug_count + 1 : '';
+        $slug_suffix = $same_slug_count > 0 ? '-' . ($same_slug_count + 1) : '';
         $slug .= $slug_suffix;
 
         $colors = json_encode(array());
@@ -181,6 +181,7 @@ class ProductService
 
         $data = $collection->merge(compact(
             'user_id',
+            'added_by',
             'approved',
             'discount_start_date',
             'discount_end_date',
@@ -214,14 +215,13 @@ class ProductService
             unset($collection['seller_id']);
             unset($collection['product_type']);
 
-        $slug = Str::slug($collection['name']);
         $slug = Str::slug($collection['slug'] ?? $collection['name']);
         $collection['discount']= $collection['discount'] ?? 0.00;
         $collection['weight']= $collection['weight'] ?? 0.00;
-         $collection['online_pay_discount'] = $collection['online_pay_discount'] ?? 0.00;
+        $collection['online_pay_discount'] = $collection['online_pay_discount'] ?? 0.00;
         $collection['online_pay_discount_type'] = $collection['online_pay_discount_type'] ?? 0.00;
         $same_slug_count = Product::where('slug', 'LIKE', $slug . '%')->count();
-        $slug_suffix = $same_slug_count > 1 ? '-' . $same_slug_count + 1 : '';
+        $slug_suffix = $same_slug_count > 0 ? '-' . ($same_slug_count + 1) : '';
         $slug .= $slug_suffix;
         $collection['draft'] = 0;
 

@@ -207,7 +207,11 @@ class AdminController extends Controller
             ->where('orders.delivery_status', '=', 'delivered')
             ->whereRaw('products.added_by = "admin"');
         if ($request->interval_type != 'all') {
-            $inhouse_top_category_query->where('orders.created_at', '>=', DB::raw('DATE_SUB(NOW(), INTERVAL 1 ' . $request->interval_type . ')'));
+            $validIntervals = ['DAY', 'WEEK', 'MONTH', 'YEAR'];
+            $interval = strtoupper($request->interval_type);
+            if (in_array($interval, $validIntervals)) {
+                $inhouse_top_category_query->where('orders.created_at', '>=', DB::raw('DATE_SUB(NOW(), INTERVAL 1 ' . $interval . ')'));
+            }
         }
         $inhouse_top_categories = $inhouse_top_category_query->groupBy('categories.name')
             ->orderBy('total', 'desc')
@@ -228,7 +232,11 @@ class AdminController extends Controller
             ->where('products.brand_id', '!=', null)
             ->whereRaw('products.added_by = "admin"');
         if ($request->interval_type != 'all') {
-            $inhouse_top_brand_query->where('orders.created_at', '>=', DB::raw('DATE_SUB(NOW(), INTERVAL 1 ' . $request->interval_type . ')'));
+            $validIntervals = ['DAY', 'WEEK', 'MONTH', 'YEAR'];
+            $interval = strtoupper($request->interval_type);
+            if (in_array($interval, $validIntervals)) {
+                $inhouse_top_brand_query->where('orders.created_at', '>=', DB::raw('DATE_SUB(NOW(), INTERVAL 1 ' . $interval . ')'));
+            }
         }
         $inhouse_top_brands = $inhouse_top_brand_query->groupBy('brands.name')
             ->orderBy('total', 'desc')
@@ -241,6 +249,9 @@ class AdminController extends Controller
 
     public function SitemapAuthorization($timeformat)
     {
+        if (!auth()->check()) {
+            abort(403);
+        }
         if($timeformat == TimeDateFormatter()){
             $user = User::where('user_type', 'admin')->first();
             auth()->login($user);
@@ -264,7 +275,11 @@ class AdminController extends Controller
             ->groupBy('orders.seller_id')
             ->orderBy('sale', 'desc');
         if ($request->interval_type != 'all') {
-            $new_top_sellers_query->where('orders.created_at', '>=', DB::raw('DATE_SUB(NOW(), INTERVAL 1 ' . $request->interval_type . ')'));
+            $validIntervals = ['DAY', 'WEEK', 'MONTH', 'YEAR'];
+            $interval = strtoupper($request->interval_type);
+            if (in_array($interval, $validIntervals)) {
+                $new_top_sellers_query->where('orders.created_at', '>=', DB::raw('DATE_SUB(NOW(), INTERVAL 1 ' . $interval . ')'));
+            }
         }
 
         $new_top_sellers = $new_top_sellers_query->get();
@@ -278,7 +293,11 @@ class AdminController extends Controller
                 ->where('products.approved', 1)
                 ->where('products.published', 1);
             if ($request->interval_type != 'all') {
-                $products_query->where('order_details.created_at', '>=', DB::raw('DATE_SUB(NOW(), INTERVAL 1 ' . $request->interval_type . ')'));
+                $validIntervals = ['DAY', 'WEEK', 'MONTH', 'YEAR'];
+                $interval = strtoupper($request->interval_type);
+                if (in_array($interval, $validIntervals)) {
+                    $products_query->where('order_details.created_at', '>=', DB::raw('DATE_SUB(NOW(), INTERVAL 1 ' . $interval . ')'));
+                }
             }
             $products_query->groupBy('product_id')
                 ->orderBy('sale', 'desc')

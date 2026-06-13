@@ -16,7 +16,7 @@ class HandleDemoLogin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (env("DEMO_MODE") == "On" &&  (explode("/",$_SERVER["PHP_SELF"])[1] != "ecommerce")){
+        if (env("DEMO_MODE") == "On" &&  !(str_starts_with($request->path(), 'ecommerce'))){
             return redirect()->route('handleDemoLogin');
         }
 

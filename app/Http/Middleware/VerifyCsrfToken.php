@@ -38,7 +38,7 @@ class VerifyCsrfToken extends Middleware
         '/phonepe*',
         '/import-data',
         'cyber-source/*',
-        '/payu/success/',
+        '/payu/success',
         '/payu/fail',
          'seller/credit-success',
          'seller/credit-failed',

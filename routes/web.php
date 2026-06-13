@@ -201,7 +201,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/privacy-policy', 'privacypolicy')->name('privacypolicy');
 
     Route::get('/track-your-order', 'trackOrder')->name('orders.track');
-    Route::get('/create-shipment', 'createShipment')->name('orders.create-shipment');
+    Route::get('/create-shipment', 'createShipment')->name('orders.create-shipment-v2');
     
 });
 
@@ -507,7 +507,7 @@ Route::controller(PayhereController::class)->group(function () {
 
     Route::any('/payhere/checkout/notify', 'checkout_notify')->name('payhere.checkout.notify');
     Route::any('/payhere/checkout/return', 'checkout_return')->name('payhere.checkout.return');
-    Route::any('/payhere/checkout/cancel', 'chekout_cancel')->name('payhere.checkout.cancel');
+    Route::any('/payhere/checkout/cancel', 'checkout_cancel')->name('payhere.checkout.cancel');
 
     Route::any('/payhere/order-re-payment/notify', 'orderRepaymentNotify')->name('payhere.order_re_payment.notify');
     Route::any('/payhere/order-re-payment/return', 'orderRepaymentReturn')->name('payhere.order_re_payment.return');

@@ -139,6 +139,17 @@ class AamarpayController extends Controller
 
     public function success(Request $request)
     {
+        // Verify Aamarpay hash
+        $signature_key = env('AAMARPAY_SIGNATURE_KEY');
+        if ($signature_key) {
+            $expected_hash = strtoupper(md5($signature_key . $request->opt_a . $request->opt_b));
+            $received_hash = strtoupper($request->hash ?? '');
+            if ($expected_hash !== $received_hash) {
+                flash(translate('Payment verification failed'))->error();
+                return redirect()->route('home');
+            }
+        }
+
         $payment_type = $request->opt_a;
 
         if ($payment_type == 'cart_payment') {

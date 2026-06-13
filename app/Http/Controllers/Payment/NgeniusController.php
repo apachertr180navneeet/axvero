@@ -40,10 +40,6 @@ class NgeniusController extends Controller
             //will be redirected
             NgeniusUtility::make_payment(route('ngenius.seller_package_payment_callback'), "seller_package_payment", $amount);
         }
-
-
-        $seller_package_id = $paymentData['seller_package_id'];
-        $seller_package  = \App\Models\SellerPackage::findOrFail($seller_package_id);
     }
 
     public function cart_payment_callback()

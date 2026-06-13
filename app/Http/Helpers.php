@@ -115,7 +115,11 @@ if (!function_exists('convert_to_usd')) {
     function convert_to_usd($amount)
     {
         $currency = Currency::find(get_setting('system_default_currency'));
-        return (floatval($amount) / floatval($currency->exchange_rate)) * Currency::where('code', 'USD')->first()->exchange_rate;
+        $usd_currency = Currency::where('code', 'USD')->first();
+        if (!$currency || !$usd_currency || $currency->exchange_rate == 0) {
+            return $amount;
+        }
+        return (floatval($amount) / floatval($currency->exchange_rate)) * $usd_currency->exchange_rate;
     }
 }
 
@@ -123,7 +127,11 @@ if (!function_exists('convert_to_kes')) {
     function convert_to_kes($amount)
     {
         $currency = Currency::find(get_setting('system_default_currency'));
-        return (floatval($amount) / floatval($currency->exchange_rate)) * Currency::where('code', 'KES')->first()->exchange_rate;
+        $kes_currency = Currency::where('code', 'KES')->first();
+        if (!$currency || !$kes_currency || $currency->exchange_rate == 0) {
+            return $amount;
+        }
+        return (floatval($amount) / floatval($currency->exchange_rate)) * $kes_currency->exchange_rate;
     }
 }
 
@@ -1359,7 +1367,8 @@ if (!function_exists('static_asset')) {
 if (!function_exists('getBaseURL')) {
     function getBaseURL()
     {
-        $root = '//' . $_SERVER['HTTP_HOST'];
+        $host = request()->getHost();
+        $root = '//' . $host;
         $root .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
         return $root;
@@ -2789,8 +2798,11 @@ if (!function_exists('get_wishlists')) {
 if (!function_exists('get_email_template_data')) {
     function get_email_template_data($identifier, $colmn_name = null)
     {
-        $value = EmailTemplate::where('identifier', $identifier)->first()->$colmn_name;
-        return $value;
+        $template = EmailTemplate::where('identifier', $identifier)->first();
+        if (!$template || !$colmn_name) {
+            return null;
+        }
+        return $template->$colmn_name ?? null;
     }
 }
 

@@ -179,14 +179,11 @@ class BlogController extends Controller
                 }
             });
 
-            $case1 = $search . '%';
-            $case2 = '%' . $search . '%';
-
-            $blogs->orderByRaw("CASE 
-                WHEN title LIKE '$case1' THEN 1 
-                WHEN title LIKE '$case2' THEN 2 
+            $blogs->orderByRaw('CASE 
+                WHEN title LIKE ? THEN 1 
+                WHEN title LIKE ? THEN 2 
                 ELSE 3 
-                END");
+                END', [$search . '%', '%' . $search . '%']);
         }
 
         if ($request->has('selected_categories')) {

@@ -27,7 +27,7 @@ class Preorder extends Model
 
     public function shop()
     {
-        return $this->hasOne(Shop::class, 'user_id', 'product_owner_id');
+        return $this->belongsTo(Shop::class, 'product_owner_id', 'user_id');
     }
 
     public function preorderCommissionHistory()

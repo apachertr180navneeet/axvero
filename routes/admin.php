@@ -80,7 +80,7 @@ use App\Http\Controllers\ShippingSystemController;
   |
  */
 //Update Routes
-Route::controller(UpdateController::class)->group(function () {
+Route::middleware(['auth', 'admin'])->controller(UpdateController::class)->group(function () {
     Route::post('/update', 'step0')->name('update');
     Route::get('/update/step1', 'step1')->name('update.step1');
     Route::get('/update/step2', 'step2')->name('update.step2');
@@ -814,4 +814,4 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin', 'prevent-ba
 
 });
 
-Route::get('/system/sitemap-item-add/{item}', [AdminController::class, 'SitemapItems'])->name('sitemap_item_add');
+Route::get('/system/sitemap-item-add/{item}', [AdminController::class, 'SitemapItems'])->name('sitemap_item_add')->middleware(['auth', 'admin']);

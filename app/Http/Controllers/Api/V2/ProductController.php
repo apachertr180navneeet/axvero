@@ -293,14 +293,11 @@ class ProductController extends Controller
                 }
             });
             SearchUtility::store($name);
-            $case1 = $name . '%';
-            $case2 = '%' . $name . '%';
-
             $products->orderByRaw('CASE
-                WHEN name LIKE "'.$case1.'" THEN 1
-                WHEN name LIKE "'.$case2.'" THEN 2
+                WHEN name LIKE ? THEN 1
+                WHEN name LIKE ? THEN 2
                 ELSE 3
-                END');
+                END', [$name . '%', '%' . $name . '%']);
         }
 
         if ($min != null && $min != "" && is_numeric($min)) {

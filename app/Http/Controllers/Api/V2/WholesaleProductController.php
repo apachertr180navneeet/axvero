@@ -25,6 +25,12 @@ class WholesaleProductController extends Controller
             $var = explode(",", $request->type);
             $col_name = $var[0];
             $query = $var[1];
+            $allowedColumns = ['name', 'unit_price', 'published', 'approved', 'created_at', 'updated_at', 'rating'];
+            $allowedDirections = ['asc', 'desc', 'ASC', 'DESC'];
+            if (!in_array($col_name, $allowedColumns) || !in_array($query, $allowedDirections)) {
+                $col_name = 'created_at';
+                $query = 'desc';
+            }
             $products = $products->orderBy($col_name, $query);
         }
         if ($request->search != null) {

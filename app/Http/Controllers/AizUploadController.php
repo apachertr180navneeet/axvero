@@ -391,6 +391,8 @@ class AizUploadController extends Controller
     public function get_preview_files(Request $request)
     {
         $ids = explode(',', $request->ids);
+        $ids = array_map('intval', $ids);
+        $ids = array_filter($ids, function ($id) { return $id > 0; });
         $files = Upload::whereIn('id', $ids)
             ->orderByRaw("FIELD(id, " . implode(',', $ids) . ")")
             ->get();

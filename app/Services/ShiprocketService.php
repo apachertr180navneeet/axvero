@@ -58,12 +58,14 @@ public function assignAwb($shipmentId,$postcode)
     $token = $this->getToken();
 
     // Step 1: Get available couriers
+    $pickupPostcode = config('services.shiprocket.pickup_postcode', '110016');
+    $weight = config('services.shiprocket.default_weight', 0.5);
     $serviceability = Http::withToken($token)->get(
         $this->baseUrl . '/courier/serviceability/', [
-            'pickup_postcode' => '110016',
+            'pickup_postcode' => $pickupPostcode,
             'delivery_postcode' => (string) $postcode,
             'cod' => 0,
-            'weight' => 0.5
+            'weight' => $weight
         ]
     )->json();
 

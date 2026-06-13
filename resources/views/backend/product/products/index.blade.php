@@ -576,7 +576,7 @@
         });
 
         function sort_products(el){
-            getProducts(currentTab, );
+            getProducts(currentTab);
         }
 
         $('#search_input').on('keyup', function () {

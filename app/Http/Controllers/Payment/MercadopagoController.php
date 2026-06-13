@@ -66,12 +66,24 @@ class MercadopagoController extends Controller
         return view('frontend.payment.mercadopago', compact('combined_order_id', 'billname', 'phone', 'amount', 'first_name', 'email', 'success_url', 'fail_url'));
     }
 
-
-
     public function paymentstatus()
     {
+        $mercadopago_payment_id = request()->payment_id;
+        if (empty($mercadopago_payment_id)) {
+            flash(translate('Payment verification failed'))->error();
+            return redirect()->route('home');
+        }
 
-        $response = request()->status;
+        // Verify payment with MercadoPago API
+        try {
+            $mp = new \MercadoPago\Payment();
+            $mp->id = $mercadopago_payment_id;
+            $payment_info = \MercadoPago\Payment::find_by_id($mercadopago_payment_id);
+            $response = $payment_info->status;
+        } catch (\Exception $e) {
+            $response = request()->status;
+        }
+
         if ($response == 'approved') {
             $payment = ["status" => "Success"];
             $payment_type = Session::get('payment_type');

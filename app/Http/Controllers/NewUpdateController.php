@@ -199,7 +199,7 @@ class NewUpdateController extends Controller
     {
         $admin_user = User::where('user_type', 'admin')->first();
         $roles = $admin_user->getRoleNames();
-        if ($roles->empty()) {
+        if ($roles->isEmpty()) {
             $admin_user->assignRole(['Super Admin']);
         }
     }

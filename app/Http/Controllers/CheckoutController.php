@@ -101,7 +101,8 @@ class CheckoutController extends Controller
                 $carrier_list = $carrier_query->get();
 
                 if (count($carrier_list) > 0) {
-                    $default_carrier_id = $carrier_list->toQuery()->first()->id;
+                    $first_carrier = $carrier_list->toQuery()->first();
+                    $default_carrier_id = $first_carrier ? $first_carrier->id : null;
                 }
             }
 
@@ -398,7 +399,7 @@ class CheckoutController extends Controller
                 
                 // NOTE: Don't calculate commission for split payments yet
                 // Commission will be calculated when COD is paid
-            } 
+            } else {
                 $order->payment_status = 'paid';
                 $order->payment_details = $payment;
                 
@@ -407,6 +408,7 @@ class CheckoutController extends Controller
                 
                 // Calculate Commission from seller, Customer Affiliate earning and Customers Club Point
                 calculateCommissionAffilationClubPoint($order);
+            }
             
             // Update user totals if bulk buyer
             if ($order->user && $order->user->isBulkBuyer()) {

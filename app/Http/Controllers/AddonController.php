@@ -404,7 +404,8 @@ class AddonController extends Controller
     }
 
     public static function isLocalhostDomain() {
-        if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) {
+        $host = request()->getHost();
+        if (strpos($host, 'localhost') !== false || $host === '127.0.0.1' || $host === '::1') {
             return true;
         }
         return false;

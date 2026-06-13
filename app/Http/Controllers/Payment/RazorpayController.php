@@ -77,23 +77,24 @@ class RazorpayController extends Controller
         if (count($input)  && !empty($input['razorpay_payment_id'])) {
             $payment_detalis = null;
             
-            if($payment['status'] != 'captured') {
-               try {
-                    // Verify Payment Signature
-                    $attributes = array(
-                        'razorpay_order_id' => $input['razorpay_order_id'],
-                        'razorpay_payment_id' => $input['razorpay_payment_id'],
-                        'razorpay_signature' => $input['razorpay_signature']
-                    );
-                    $api->utility->verifyPaymentSignature($attributes);
-                    //End of  Verify Payment Signature
+            try {
+                // Always verify Payment Signature
+                $attributes = array(
+                    'razorpay_order_id' => $input['razorpay_order_id'],
+                    'razorpay_payment_id' => $input['razorpay_payment_id'],
+                    'razorpay_signature' => $input['razorpay_signature']
+                );
+                $api->utility->verifyPaymentSignature($attributes);
+                
+                if($payment['status'] != 'captured') {
                     $response = $api->payment->fetch($input['razorpay_payment_id'])->capture(array('amount' => $payment['amount']));
-                    
-                } catch (\Exception $e) {
-                    return  $e->getMessage();
-                    \Session::put('error', $e->getMessage());
-                    return redirect()->route('home');
-                } 
+                } else {
+                    $response = $payment;
+                }
+                
+            } catch (\Exception $e) {
+                \Session::put('error', $e->getMessage());
+                return redirect()->route('home');
             }
             
             $payment_detalis = json_encode(
