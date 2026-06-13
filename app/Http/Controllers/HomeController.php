@@ -102,8 +102,7 @@ class HomeController extends Controller
 
 
     // Pass the data to the view
-    $homepage = get_setting('homepage_select', 'classic');
-    return view('frontend.' . $homepage . '.index', compact('featured_categories', 'hot_categories', 'categories', 'lang'));
+    return view('frontend.' . get_setting('homepage_select') . '.index', compact('featured_categories', 'hot_categories', 'categories', 'lang'));
 }
 
 
