@@ -4,7 +4,7 @@
     $bottomHeaderTextColor = get_setting('bottom_header_text_color');
 @endphp
 <div class="top-navbar z-1035 h-35px h-sm-auto top-background-color-visibility"
-    style="background-color: {{ get_setting('top_header_bg_color') }}">
+    style="background-color: {{  get_setting('top_header_bg_color')  }}">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col">
@@ -14,7 +14,8 @@
                         <li class="list-inline-item dropdown mr-4 lang-visibility" id="lang-change">
 
                             <a href="javascript:void(0)" class="dropdown-toggle fs-12 py-2 top-text-color-visibility"
-                                style="color: {{ $topHeaderTextColor }}" data-toggle="dropdown" data-display="static">
+                                style="color: {{ $topHeaderTextColor }}" data-toggle="dropdown"
+                                data-display="static">
                                 <span class="">{{ $system_language->name }}</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-left">
@@ -35,21 +36,21 @@
 
                     <!-- Currency Switcher -->
                     @if (get_setting('show_currency_switcher') == 'on')
-                        <li class="list-inline-item dropdown ml-auto ml-lg-0 mr-0 currency-visibility"
-                            id="currency-change">
+                        <li class="list-inline-item dropdown ml-auto ml-lg-0 mr-0 currency-visibility" id="currency-change">
                             @php
                                 $system_currency = get_system_currency();
                             @endphp
 
                             <a href="javascript:void(0)" class="dropdown-toggle fs-12 py-2 top-text-color-visibility"
-                                style="color: {{ $topHeaderTextColor }}" data-toggle="dropdown" data-display="static">
+                                style="color: {{ $topHeaderTextColor }}" data-toggle="dropdown"
+                                data-display="static">
                                 {{ $system_currency->name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
                                 @foreach (get_all_active_currency() as $key => $currency)
                                     <li>
                                         <a class="dropdown-item @if ($system_currency->code == $currency->code) active @endif text-dark"
-                                            href="javascript:void(0)"
+                                             href="javascript:void(0)"
                                             data-currency="{{ $currency->code }}">{{ $currency->name }}
                                             ({{ $currency->symbol }})
                                         </a>
@@ -80,7 +81,8 @@
 
                                 <!-- Dropdown Menu -->
                                 <div class="dropdown-menu fs-12 p-0 mt-1">
-                                    <a class="dropdown-item py-2 px-2 text-dark" href="{{ route('seller.login') }}">
+                                    <a class="dropdown-item py-2 px-2 text-dark"
+                                        href="{{ route('seller.login') }}">
                                         {{ translate('Login to Seller') }}
                                     </a>
                                 </div>
@@ -123,12 +125,11 @@
                 <!-- top menu sidebar button -->
                 <button type="button" class="btn d-lg-none mr-3 mr-sm-4 p-0 active" data-toggle="class-toggle"
                     data-target=".aiz-top-menu-sidebar">
-                    <svg id="Component_43_1" data-name="Component 43 – 1" xmlns="http://www.w3.org/2000/svg"
-                        width="16" height="16" viewBox="0 0 16 16">
+                    <svg id="Component_43_1" data-name="Component 43 – 1" xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" viewBox="0 0 16 16">
                         <rect id="Rectangle_19062" data-name="Rectangle 19062" width="16" height="2"
                             transform="translate(0 7)" fill="#919199" />
-                        <rect id="Rectangle_19063" data-name="Rectangle 19063" width="16" height="2"
-                            fill="#919199" />
+                        <rect id="Rectangle_19063" data-name="Rectangle 19063" width="16" height="2" fill="#919199" />
                         <rect id="Rectangle_19064" data-name="Rectangle 19064" width="16" height="2"
                             transform="translate(0 14)" fill="#919199" />
                     </svg>
@@ -136,19 +137,17 @@
                 </button>
                 <!-- Header Logo -->
                 <div class="col-auto pl-0 pr-3 d-flex align-items-center">
-                    <a class="d-block py-20px mr-3 ml-0 d-flex align-items-center" href="{{ route('home') }}">
+                    <a class="d-block py-20px mr-3 ml-0" href="{{ route('home') }}">
                         @php
                             $header_logo = get_setting('header_logo');
                         @endphp
                         @if ($header_logo != null)
-                            <img id="header-logo-preview" src="{{ uploaded_asset($header_logo) }}"
-                                alt="{{ env('APP_NAME') }}" class="mw-100 h-80px h-md-80px" height="80">
+                            <img id="header-logo-preview" src="{{ uploaded_asset($header_logo) }}" alt="{{ env('APP_NAME') }}"
+                                class="mw-100 h-80px h-md-80px" height="80">
                         @else
-                            <img id="header-logo-preview" src="{{ static_asset('assets/img/logo.png') }}"
-                                alt="{{ env('APP_NAME') }}" class="mw-100 h-80px h-md-80px" height="80">
+                            <img id="header-logo-preview" src="{{ static_asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}"
+                                class="mw-100 h-80px h-md-80px" height="80">
                         @endif
-                        <span class="ml-2 fs-16 fw-700"
-                            style="color: {{ $middleHeaderTextColor }}">{{ env('APP_NAME') }}</span>
                     </a>
                 </div>
                 <!-- Search Icon for small device -->
@@ -170,8 +169,7 @@
                                 <div class="search-input-box">
                                     <input type="text"
                                         class="border border-soft-light form-control fs-14 hov-animate-outline"
-                                        id="search" name="keyword"
-                                        @isset($query) value="{{ $query }}" @endisset
+                                        id="search" name="keyword" @isset($query) value="{{ $query }}" @endisset
                                         placeholder="{{ translate('I am shopping for...') }}" autocomplete="off">
 
                                     <svg id="Group_723" data-name="Group 723" xmlns="http://www.w3.org/2000/svg"
@@ -230,8 +228,8 @@
                     <ul class="list-inline mb-0 h-100 d-none d-xl-flex justify-content-end align-items-center">
                         <li class="list-inline-item ml-3 mr-3 pr-3 pl-0 dropdown">
                             <a class="dropdown-toggle no-arrow text-secondary fs-12" data-toggle="dropdown"
-                                href="javascript:void(0);" role="button" aria-haspopup="false"
-                                aria-expanded="false" onclick="nonLinkableNotificationRead()">
+                                href="javascript:void(0);" role="button" aria-haspopup="false" aria-expanded="false"
+                                onclick="nonLinkableNotificationRead()">
                                 <span class="position-relative d-inline-block">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14.668" height="16"
                                         viewBox="0 0 14.668 16">
@@ -257,7 +255,7 @@
                                                     $showNotification = true;
                                                     if (
                                                         $notification->type ==
-                                                            'App\Notifications\PreorderNotification' &&
+                                                        'App\Notifications\PreorderNotification' &&
                                                         !addon_is_activated('preorder')
                                                     ) {
                                                         $showNotification = false;
@@ -273,10 +271,12 @@
                                                         $notifyContent = $notificationType->getTranslation(
                                                             'default_text',
                                                         );
-                                                        $notificationShowDesign = get_setting('notification_show_type');
+                                                        $notificationShowDesign = get_setting(
+                                                            'notification_show_type',
+                                                        );
                                                         if (
                                                             $notification->type ==
-                                                                'App\Notifications\customNotification' &&
+                                                            'App\Notifications\customNotification' &&
                                                             $notification->data['link'] == null
                                                         ) {
                                                             $isLinkable = false;
@@ -304,10 +304,13 @@
                                                             <div>
                                                                 @if ($notification->type == 'App\Notifications\OrderNotification')
                                                                     @php
-                                                                        $orderCode = $notification->data['order_code'];
+                                                                        $orderCode =
+                                                                            $notification->data['order_code'];
                                                                         $route = route(
                                                                             'purchase_history.details',
-                                                                            encrypt($notification->data['order_id']),
+                                                                            encrypt(
+                                                                                $notification->data['order_id'],
+                                                                            ),
                                                                         );
                                                                         $orderCode =
                                                                             "<span class='text-blue'>" .
@@ -321,10 +324,13 @@
                                                                     @endphp
                                                                 @elseif($notification->type == 'App\Notifications\PreorderNotification')
                                                                     @php
-                                                                        $orderCode = $notification->data['order_code'];
+                                                                        $orderCode =
+                                                                            $notification->data['order_code'];
                                                                         $route = route(
                                                                             'preorder.order_details',
-                                                                            encrypt($notification->data['preorder_id']),
+                                                                            encrypt(
+                                                                                $notification->data['preorder_id'],
+                                                                            ),
                                                                         );
                                                                         $orderCode =
                                                                             "<span class='text-blue'>" .
@@ -342,11 +348,11 @@
                                                                     <a
                                                                         href="{{ route('notification.read-and-redirect', encrypt($notification->id)) }}">
                                                                 @endif
-                                                                <span
-                                                                    class="fs-12 text-dark text-truncate-2">{!! $notifyContent !!}</span>
-                                                                @if ($isLinkable = true)
-                                                                    </a>
-                                                                @endif
+                                                                    <span
+                                                                        class="fs-12 text-dark text-truncate-2">{!! $notifyContent !!}</span>
+                                                                    @if ($isLinkable = true)
+                                                                        </a>
+                                                                    @endif
                                                             </div>
                                                         </div>
                                                     </li>
@@ -374,14 +380,12 @@
 
                 <div class="d-none d-xl-block ml-auto mr-0">
                     @auth
-                        <span
-                            class="d-flex align-items-center nav-user-info py-20px @if (isAdmin()) ml-5 @endif"
+                        <span class="d-flex align-items-center nav-user-info py-20px @if (isAdmin()) ml-5 @endif"
                             id="nav-user-info">
                             <!-- Image -->
                             <span class="size-40px rounded-circle overflow-hidden border border-transparent nav-user-img">
                                 @if ($user->avatar_original != null)
-                                    <img src="{{ uploaded_asset(Auth::user()->avatar_original) }}" class="img-fit h-100"
-                                        alt="{{ translate('avatar') }}"
+                                    <img src="{{ uploaded_asset(Auth::user()->avatar_original) }}" class="img-fit h-100" alt="{{ translate('avatar') }}"
                                         onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">
                                 @else
                                     <img src="{{ static_asset('assets/img/avatar-place.png') }}" class="image"
@@ -390,29 +394,26 @@
                                 @endif
                             </span>
                             <!-- Name -->
-                            <h4 class="h5 fs-14 fw-700 ml-2 mb-0 middle-text-color-visibility"
-                                style="color: {{ $middleHeaderTextColor }}">{{ $user->name }}</h4>
+                            <h4 class="h5 fs-14 fw-700 ml-2 mb-0 middle-text-color-visibility" style="color: {{ $middleHeaderTextColor }}">{{ $user->name }}</h4>
                         </span>
                     @else
                         <!--Login & Registration -->
                         <span class="d-flex align-items-center nav-user-info ml-3">
                             <!-- Image -->
                             <span
-                                class="size-40px rounded-circle overflow-hidden border d-flex align-items-center justify-content-center nav-user-img middle-text-color-visibility"
-                                style="color: {{ $middleHeaderTextColor }}">
+                                class="size-40px rounded-circle overflow-hidden border d-flex align-items-center justify-content-center nav-user-img middle-text-color-visibility" style="color: {{ $middleHeaderTextColor }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19.902" height="20.012"
                                     viewBox="0 0 19.902 20.012">
                                     <path id="fe2df171891038b33e9624c27e96e367"
                                         d="M15.71,12.71a6,6,0,1,0-7.42,0,10,10,0,0,0-6.22,8.18,1.006,1.006,0,1,0,2,.22,8,8,0,0,1,15.9,0,1,1,0,0,0,1,.89h.11a1,1,0,0,0,.88-1.1,10,10,0,0,0-6.25-8.19ZM12,12a4,4,0,1,1,4-4A4,4,0,0,1,12,12Z"
-                                        transform="translate(-2.064 -1.995)" fill="currentColor" />
+                                        transform="translate(-2.064 -1.995)" fill="currentColor"/>
                                 </svg>
                             </span>
                             <a href="{{ route('user.login') }}"
-                                class="opacity-60 hov-opacity-100 fs-12 d-inline-block border-right border-soft-light border-width-2 pr-2 ml-3 middle-text-color-visibility"
-                                style="color: {{ $middleHeaderTextColor }}">{{ translate('Login') }}</a>
-                            <a href="{{ route('user.registration') }}" {{-- <a href="{{ route('user.registration') }}" --}}
-                                class="opacity-60 hov-opacity-100 fs-12 d-inline-block py-2 pl-2 middle-text-color-visibility"
-                                style="color: {{ $middleHeaderTextColor }}">{{ translate('Registration') }}</a>
+                                class="opacity-60 hov-opacity-100 fs-12 d-inline-block border-right border-soft-light border-width-2 pr-2 ml-3 middle-text-color-visibility" style="color: {{ $middleHeaderTextColor }}">{{ translate('Login') }}</a>
+                            <a href="{{ route('user.registration') }}"
+                                {{-- <a href="{{ route('user.registration') }}" --}}
+                                class="opacity-60 hov-opacity-100 fs-12 d-inline-block py-2 pl-2 middle-text-color-visibility" style="color: {{ $middleHeaderTextColor }}">{{ translate('Registration') }}</a>
                         </span>
                     @endauth
                 </div>
@@ -429,8 +430,7 @@
                                 <li class="user-top-nav-element border border-top-0" data-id="1">
                                     <a href="{{ route('admin.dashboard') }}"
                                         class="text-truncate text-dark px-4 fs-14 d-flex align-items-center hov-column-gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                                             <path id="Path_2916" data-name="Path 2916"
                                                 d="M15.3,5.4,9.561.481A2,2,0,0,0,8.26,0H7.74a2,2,0,0,0-1.3.481L.7,5.4A2,2,0,0,0,0,6.92V14a2,2,0,0,0,2,2H14a2,2,0,0,0,2-2V6.92A2,2,0,0,0,15.3,5.4M10,15H6V9A1,1,0,0,1,7,8H9a1,1,0,0,1,1,1Zm5-1a1,1,0,0,1-1,1H11V9A2,2,0,0,0,9,7H7A2,2,0,0,0,5,9v6H2a1,1,0,0,1-1-1V6.92a1,1,0,0,1,.349-.76l5.74-4.92A1,1,0,0,1,7.74,1h.52a1,1,0,0,1,.651.24l5.74,4.92A1,1,0,0,1,15,6.92Z"
                                                 fill="#b5b5c0" />
@@ -443,8 +443,7 @@
                                 <li class="user-top-nav-element border border-top-0" data-id="1">
                                     <a href="{{ route('dashboard') }}"
                                         class="text-truncate text-dark px-4 fs-14 d-flex align-items-center hov-column-gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                                             <path id="Path_2916" data-name="Path 2916"
                                                 d="M15.3,5.4,9.561.481A2,2,0,0,0,8.26,0H7.74a2,2,0,0,0-1.3.481L.7,5.4A2,2,0,0,0,0,6.92V14a2,2,0,0,0,2,2H14a2,2,0,0,0,2-2V6.92A2,2,0,0,0,15.3,5.4M10,15H6V9A1,1,0,0,1,7,8H9a1,1,0,0,1,1,1Zm5-1a1,1,0,0,1-1,1H11V9A2,2,0,0,0,9,7H7A2,2,0,0,0,5,9v6H2a1,1,0,0,1-1-1V6.92a1,1,0,0,1,.349-.76l5.74-4.92A1,1,0,0,1,7.74,1h.52a1,1,0,0,1,.651.24l5.74,4.92A1,1,0,0,1,15,6.92Z"
                                                 fill="#b5b5c0" />
@@ -459,8 +458,7 @@
                                 <li class="user-top-nav-element border border-top-0" data-id="1">
                                     <a href="{{ route('purchase_history.index') }}"
                                         class="text-truncate text-dark px-4 fs-14 d-flex align-items-center hov-column-gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                                             <g id="Group_25261" data-name="Group 25261"
                                                 transform="translate(-27.466 -542.963)">
                                                 <path id="Path_2953" data-name="Path 2953"
@@ -533,8 +531,7 @@
                                     <li class="user-top-nav-element border border-top-0" data-id="1">
                                         <a href="{{ route('conversations.index') }}"
                                             class="text-truncate text-dark px-4 fs-14 d-flex align-items-center hov-column-gap-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                viewBox="0 0 16 16">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                                                 <g id="Group_25263" data-name="Group 25263"
                                                     transform="translate(1053.151 256.688)">
                                                     <path id="Path_3012" data-name="Path 3012"
@@ -561,17 +558,15 @@
                                     <li class="user-top-nav-element border border-top-0" data-id="1">
                                         <a href="{{ route('wallet.index') }}"
                                             class="text-truncate text-dark px-4 fs-14 d-flex align-items-center hov-column-gap-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="16"
-                                                height="16" viewBox="0 0 16 16">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                width="16" height="16" viewBox="0 0 16 16">
                                                 <defs>
                                                     <clipPath id="clip-path1">
-                                                        <rect id="Rectangle_1386" data-name="Rectangle 1386"
-                                                            width="16" height="16" fill="#b5b5bf" />
+                                                        <rect id="Rectangle_1386" data-name="Rectangle 1386" width="16"
+                                                            height="16" fill="#b5b5bf" />
                                                     </clipPath>
                                                 </defs>
-                                                <g id="Group_8102" data-name="Group 8102"
-                                                    clip-path="url(#clip-path1)">
+                                                <g id="Group_8102" data-name="Group 8102" clip-path="url(#clip-path1)">
                                                     <path id="Path_2936" data-name="Path 2936"
                                                         d="M13.5,4H13V2.5A2.5,2.5,0,0,0,10.5,0h-8A2.5,2.5,0,0,0,0,2.5v11A2.5,2.5,0,0,0,2.5,16h11A2.5,2.5,0,0,0,16,13.5v-7A2.5,2.5,0,0,0,13.5,4M2.5,1h8A1.5,1.5,0,0,1,12,2.5V4H2.5a1.5,1.5,0,0,1,0-3M15,11H10a1,1,0,0,1,0-2h5Zm0-3H10a2,2,0,0,0,0,4h5v1.5A1.5,1.5,0,0,1,13.5,15H2.5A1.5,1.5,0,0,1,1,13.5v-9A2.5,2.5,0,0,0,2.5,5h11A1.5,1.5,0,0,1,15,6.5Z"
                                                         fill="#b5b5bf" />
@@ -587,8 +582,7 @@
                                         class="text-truncate text-dark px-4 fs-14 d-flex align-items-center hov-column-gap-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16.001"
                                             viewBox="0 0 16 16.001">
-                                            <g id="Group_25259" data-name="Group 25259"
-                                                transform="translate(-316 -1066)">
+                                            <g id="Group_25259" data-name="Group 25259" transform="translate(-316 -1066)">
                                                 <path id="Subtraction_184" data-name="Subtraction 184"
                                                     d="M16427.109,902H16420a8.015,8.015,0,1,1,8-8,8.278,8.278,0,0,1-1.422,4.535l1.244,2.132a.81.81,0,0,1,0,.891A.791.791,0,0,1,16427.109,902ZM16420,887a7,7,0,1,0,0,14h6.283c.275,0,.414,0,.549-.111s-.209-.574-.34-.748l0,0-.018-.022-1.064-1.6A6.829,6.829,0,0,0,16427,894a6.964,6.964,0,0,0-7-7Z"
                                                     transform="translate(-16096 180)" fill="#b5b5bf" />
@@ -607,17 +601,15 @@
                                     class="text-truncate px-4 fs-14 d-flex align-items-center hov-column-gap-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.999"
                                         viewBox="0 0 16 15.999">
-                                        <g id="Group_25503" data-name="Group 25503"
-                                            transform="translate(-24.002 -377)">
+                                        <g id="Group_25503" data-name="Group 25503" transform="translate(-24.002 -377)">
                                             <g id="Group_25265" data-name="Group 25265"
                                                 transform="translate(-216.534 -160)">
                                                 <path id="Subtraction_192" data-name="Subtraction 192"
                                                     d="M12052.535,2920a8,8,0,0,1-4.569-14.567l.721.72a7,7,0,1,0,7.7,0l.721-.72a8,8,0,0,1-4.567,14.567Z"
                                                     transform="translate(-11803.999 -2367)" fill="#d43533" />
                                             </g>
-                                            <rect id="Rectangle_19022" data-name="Rectangle 19022" width="1"
-                                                height="8" rx="0.5" transform="translate(31.5 377)"
-                                                fill="#d43533" />
+                                            <rect id="Rectangle_19022" data-name="Rectangle 19022" width="1" height="8"
+                                                rx="0.5" transform="translate(31.5 377)" fill="#d43533" />
                                         </g>
                                     </svg>
                                     <span
@@ -632,16 +624,14 @@
     </div>
 
     <!-- Menu Bar -->
-    <div class="d-none d-lg-block position-relative h-50px bottom-background-color-visibility"
-        style="background-color: {{ get_setting('bottom_header_bg_color') }}">
+    <div class="d-none d-lg-block position-relative h-50px bottom-background-color-visibility" style="background-color: {{ get_setting('bottom_header_bg_color') }}">
         <div class="container h-100">
             <div class="d-flex h-100">
                 <!-- Categoty Menu Button -->
                 <div class="d-none d-xl-block all-category has-transition bg-black-10" id="category-menu-bar">
                     <div class="px-3 h-100"
                         style="padding-top: 12px;padding-bottom: 12px; width:270px; cursor: pointer;">
-                        <div class="d-flex align-items-center justify-content-between bottom-text-color-visibility"
-                            style="color: {{ $bottomHeaderTextColor }}">
+                        <div class="d-flex align-items-center justify-content-between bottom-text-color-visibility" style="color: {{ $bottomHeaderTextColor }}">
                             <div>
                                 <span class="fw-700 fs-16 mr-3">{{ translate('Categories') }}</span>
                                 <a href="{{ route('categories.all') }}" class="text-reset categoriesAll">
@@ -663,8 +653,7 @@
                                     <li class="list-inline-item mr-0 animate-underline-white">
                                         <a href="{{ json_decode(get_setting('header_menu_links'), true)[$key] }}"
                                             class="fs-13 px-3 py-3 d-inline-block fw-700 header_menu_links hov-bg-black-10 bottom-text-color-visibility
-                                            @if (url()->current() == json_decode(get_setting('header_menu_links'), true)[$key]) active @endif"
-                                            style="color: {{ $bottomHeaderTextColor }}">
+                                                                    @if (url()->current() == json_decode(get_setting('header_menu_links'), true)[$key]) active @endif" style="color: {{ $bottomHeaderTextColor }}">
                                             {{ translate($value) }}
                                         </a>
                                     </li>

@@ -32,11 +32,6 @@ install.zip
 /nbproject
 /public/app-translations
 public/uploads.zip
-eomshopping_backup.zip
-_public_html.zip
 .env
 public/all
-/storage/logs/*
-/storage/framework/views/*
-/storage/*
 

@@ -91,7 +91,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-zoom product-modal" id="modal-size" role="document">
             <div class="modal-content position-relative">
                 <div class="c-preloader">
-                    <i class="las la-spinner la-spin"></i>
+                    <i class="fa fa-spin fa-spinner"></i>
                 </div>
                 <button type="button" class="close absolute-close-btn" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
