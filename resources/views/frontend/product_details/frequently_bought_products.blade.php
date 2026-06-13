@@ -31,7 +31,7 @@
                  id="section_similar_products">
                 @foreach ($similarProducts as $key => $related_product)
                     <div class="carousel-box px-3 position-relative has-transition hov-animate-outline border-right border-top border-bottom @if($key == 0) border-left @endif">
-                        @include('frontend.'.get_setting('homepage_select').'.partials.product_box_1',
+                        @include('frontend.'.get_setting('homepage_select', 'classic').'.partials.product_box_1',
                             ['product' => $related_product])
                     </div>
                 @endforeach

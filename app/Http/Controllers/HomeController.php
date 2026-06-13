@@ -58,7 +58,7 @@ class HomeController extends Controller
     //         return Category::with('bannerImage')->where('hot_category', '1')->get();
     //     });
 
-    //     return view('frontend.' . get_setting('homepage_select') . '.index', compact('featured_categories','hot_categories', 'lang'));
+    //     return view('frontend.' . get_setting('homepage_select', 'classic') . '.index', compact('featured_categories','hot_categories', 'lang'));
     // }
 
 
@@ -102,14 +102,14 @@ class HomeController extends Controller
 
 
     // Pass the data to the view
-    return view('frontend.' . get_setting('homepage_select') . '.index', compact('featured_categories', 'hot_categories', 'categories', 'lang'));
+    return view('frontend.' . get_setting('homepage_select', 'classic') . '.index', compact('featured_categories', 'hot_categories', 'categories', 'lang'));
 }
 
 
     public function load_todays_deal_section()
     {
         $todays_deal_products = filter_products(Product::where('todays_deal', '1'))->orderBy('id', 'desc')->get();
-        return view('frontend.' . get_setting('homepage_select') . '.partials.todays_deal', compact('todays_deal_products'));
+        return view('frontend.' . get_setting('homepage_select', 'classic') . '.partials.todays_deal', compact('todays_deal_products'));
     }
 
     public function load_newest_product_section(Request $request)
@@ -124,23 +124,23 @@ class HomeController extends Controller
                 ->skip($offset)
                 ->take($limit)
                 ->get();
-            return view('frontend.' . get_setting('homepage_select') . '.partials.newest_products_section', compact('newest_products'));
+            return view('frontend.' . get_setting('homepage_select', 'classic') . '.partials.newest_products_section', compact('newest_products'));
         }
         $newest_products = Cache::remember('newest_products', 3600, function () use ($limit) {
             return filter_products(Product::latest())->take($limit)->get();
         });
 
-        return view('frontend.' . get_setting('homepage_select') . '.partials.newest_products_section', compact('newest_products'));
+        return view('frontend.' . get_setting('homepage_select', 'classic') . '.partials.newest_products_section', compact('newest_products'));
     }
 
     public function load_featured_section()
     {
-        return view('frontend.' . get_setting('homepage_select') . '.partials.featured_products_section');
+        return view('frontend.' . get_setting('homepage_select', 'classic') . '.partials.featured_products_section');
     }
 
     public function load_best_selling_section()
     {
-        return view('frontend.' . get_setting('homepage_select') . '.partials.best_selling_section');
+        return view('frontend.' . get_setting('homepage_select', 'classic') . '.partials.best_selling_section');
     }
 
     public function load_auction_products_section()
@@ -149,17 +149,17 @@ class HomeController extends Controller
             return;
         }
         $lang = get_system_language() ? get_system_language()->code : null;
-        return view('auction.frontend.' . get_setting('homepage_select') . '.auction_products_section', compact('lang'));
+        return view('auction.frontend.' . get_setting('homepage_select', 'classic') . '.auction_products_section', compact('lang'));
     }
 
     public function load_home_categories_section()
     {
-        return view('frontend.' . get_setting('homepage_select') . '.partials.home_categories_section');
+        return view('frontend.' . get_setting('homepage_select', 'classic') . '.partials.home_categories_section');
     }
 
     public function load_best_sellers_section()
     {
-        return view('frontend.' . get_setting('homepage_select') . '.partials.best_sellers_section');
+        return view('frontend.' . get_setting('homepage_select', 'classic') . '.partials.best_sellers_section');
     }
     public function load_preorder_featured_products_section()
     {
@@ -177,7 +177,7 @@ class HomeController extends Controller
             ->limit(12)
             ->get();
         // });
-        return view('frontend.' . get_setting('homepage_select') . '.partials.preorder_products_section', compact('preorder_products'));
+        return view('frontend.' . get_setting('homepage_select', 'classic') . '.partials.preorder_products_section', compact('preorder_products'));
     }
 
 public function getRecentProducts(Request $request)

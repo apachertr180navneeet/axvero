@@ -7,8 +7,7 @@
 /public/assets
 /public/storage
 /public/uploads
-/storage/*.key
-/storage/debugbar
+/storage/*
 /vendor
 /temp
 /.idea

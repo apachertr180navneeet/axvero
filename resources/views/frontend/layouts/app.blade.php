@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 @php
-    $rtl = get_session_language()->rtl;
+    $rtl = get_session_language()?->rtl ?? 0;
 @endphp
 
 @if ($rtl == 1)
@@ -72,7 +72,7 @@
     @endif
     <link rel="stylesheet" href="{{ static_asset('assets/css/aiz-core.css?v=') }}{{ rand(1000, 9999) }}">
     <link rel="stylesheet" href="{{ static_asset('assets/css/custom-style.css') }}">
-    @if(get_setting('homepage_select') == 'thecore')
+    @if(get_setting('homepage_select', 'classic') == 'thecore')
     <link rel="stylesheet" href="{{ static_asset('assets/css/thecore.css') }}">
     @endif
 
@@ -219,7 +219,7 @@
 </head>
 <body>
     <!-- aiz-main-wrapper -->
-    <div class="aiz-main-wrapper d-flex flex-column bg-white aiz-{{ get_setting('homepage_select') }}">
+    <div class="aiz-main-wrapper d-flex flex-column bg-white aiz-{{ get_setting('homepage_select', 'classic') }}">
         @php
             $user = auth()->user();
             $user_avatar = null;
@@ -489,7 +489,7 @@
             }, function(data) {
                 $('#section_newest').html(data);
                 AIZ.plugins.slickCarousel();
-                @if (get_setting('homepage_select') == 'thecore')
+                @if (get_setting('homepage_select', 'classic') == 'thecore')
                  toggleViewMoreButton();
                 @endif
             });

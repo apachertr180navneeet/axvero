@@ -1,6 +1,6 @@
 @if (count($newest_products) > 0)
     @php
-        $lang = get_system_language()->code;
+        $lang = get_system_language()?->code ?? 'en';
         $homeBanner3Images = get_setting('home_banner3_images', null, $lang);
         $xxl_items = 3;
         $xl_items = 2.5;
@@ -29,7 +29,7 @@
                 <div class="aiz-carousel arrow-none sm-gutters-16" data-rows="2" data-items="{{ $xxl_items }}" data-xl-items="{{ $xxl_items }}" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='false'>
                     @foreach ($newest_products as $key => $new_product)
                     <div class="carousel-box px-3 position-relative has-transition hov-animate-outline">
-                        @include('frontend.'.get_setting('homepage_select').'.partials.product_box_1',['product' => $new_product])
+                        @include('frontend.'.get_setting('homepage_select', 'classic').'.partials.product_box_1',['product' => $new_product])
                     </div>
                     @endforeach
                 </div>

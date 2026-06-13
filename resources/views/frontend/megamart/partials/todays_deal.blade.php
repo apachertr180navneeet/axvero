@@ -2,7 +2,7 @@
     <section  class="mb-2 mb-md-3 mt-2 mt-md-3">
         <div class="container">
             @php
-                $lang = get_system_language()->code;
+                $lang = get_system_language()?->code ?? 'en';
                 $todays_deal_banner = get_setting('todays_deal_banner', null, $lang);
                 $todays_deal_banner_small = get_setting('todays_deal_banner_small', null, $lang);
             @endphp

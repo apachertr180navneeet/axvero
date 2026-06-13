@@ -8,7 +8,7 @@
                 <!-- Title -->
                 <h1 class="fw-700 fs-20 fs-md-24 text-dark">{{ $flash_deal->title }}</h1>
             </div>
-            <input type="hidden" id="selected_homepage" value="{{get_setting('homepage_select')}}">
+            <input type="hidden" id="selected_homepage" value="{{get_setting('homepage_select', 'classic')}}">
             <div class="row gutters-16">
                 <!-- Flash Deals Baner & Countdown -->
                 <div class="col-xxl-4 col-lg-5">
@@ -39,7 +39,7 @@
                                             }
                                         @endphp
                                         <div class="col text-center border-right border-bottom has-transition hov-shadow-out z-1">
-                                            @include('frontend.'.get_setting('homepage_select').'.partials.product_box_1',['product' => $product])
+                                            @include('frontend.'.get_setting('homepage_select', 'classic').'.partials.product_box_1',['product' => $product])
                                         </div>
                                     @endif
                                 @endforeach

@@ -1,6 +1,6 @@
 @if (count(get_featured_products()) > 0)
     @php 
-        $lang = get_system_language()->code;
+        $lang = get_system_language()?->code ?? 'en';
         $homeBanner1Images = get_setting('featuredPreorder_images', null, $lang);
         $xxl_items = 6;
         $xl_items = 5;
