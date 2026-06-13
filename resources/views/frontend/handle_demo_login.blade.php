@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 @php
-    $rtl = get_session_language()?->rtl ?? 0;
+    $rtl = get_session_language()->rtl;
 @endphp
 
 @if ($rtl == 1)

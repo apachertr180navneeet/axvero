@@ -36,7 +36,7 @@
         }
     </style>
 
-    @php $lang = get_system_language()?->code ?? 'en';  @endphp
+    @php $lang = get_system_language()->code;  @endphp
 
     <!-- Featured Categories -->
     @if (count($featured_categories) > 0)

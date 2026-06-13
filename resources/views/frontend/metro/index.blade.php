@@ -15,7 +15,7 @@
         }
     </style>
 
-    @php $lang = get_system_language()?->code ?? 'en';  @endphp
+    @php $lang = get_system_language()->code;  @endphp
 
     <!-- Sliders -->
     <div class="home-banner-area mb-3">

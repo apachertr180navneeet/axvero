@@ -191,7 +191,7 @@ if (!function_exists('get_system_default_currency')) {
     function get_system_default_currency()
     {
         return Cache::remember('system_default_currency', 86400, function () {
-            return Currency::find(get_setting('system_default_currency')) ?? Currency::first();
+            return Currency::findOrFail(get_setting('system_default_currency'));
         });
     }
 }
@@ -200,19 +200,16 @@ if (!function_exists('get_system_default_currency')) {
 if (!function_exists('convert_price')) {
     function convert_price($price)
     {
-        $default_currency = get_system_default_currency();
-        if (!$default_currency) return $price;
-
-        if (Session::has('currency_code') && (Session::get('currency_code') != $default_currency->code)) {
-            $price = floatval($price) / floatval($default_currency->exchange_rate);
+        if (Session::has('currency_code') && (Session::get('currency_code') != get_system_default_currency()->code)) {
+            $price = floatval($price) / floatval(get_system_default_currency()->exchange_rate);
             $price = floatval($price) * floatval(Session::get('currency_exchange_rate'));
         }
 
         if (
             request()->header('Currency-Code') &&
-            request()->header('Currency-Code') != $default_currency->code
+            request()->header('Currency-Code') != get_system_default_currency()->code
         ) {
-            $price = floatval($price) / floatval($default_currency->exchange_rate);
+            $price = floatval($price) / floatval(get_system_default_currency()->exchange_rate);
             $price = floatval($price) * floatval(request()->header('Currency-Exchange-Rate'));
         }
         return $price;
@@ -229,7 +226,7 @@ if (!function_exists('currency_symbol')) {
         if (request()->header('Currency-Code')) {
             return request()->header('Currency-Code');
         }
-        return get_system_default_currency()?->symbol ?? '$';
+        return get_system_default_currency()->symbol;
     }
 }
 

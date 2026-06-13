@@ -1,0 +1,120 @@
+[2026-01-09 17:24:10] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:212)
+[stacktrace]
+#0 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(137): Illuminate\\Log\\LogManager->resolve()
+#1 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(124): Illuminate\\Log\\LogManager->get()
+#2 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(681): Illuminate\\Log\\LogManager->driver()
+#3 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(317): Illuminate\\Log\\LogManager->error()
+#4 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(278): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(497): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->reportException()
+#7 /home/u972418887/domains/eomshopping.com/public_html/public/index.php(56): Illuminate\\Foundation\\Http\\Kernel->handle()
+#8 {main}
+"} 
+[2026-01-09 17:24:10] laravel.ERROR: The "" directory does not exist. {"exception":"[object] (Symfony\\Component\\Finder\\Exception\\DirectoryNotFoundException(code: 0): The \"\" directory does not exist. at /home/u972418887/domains/eomshopping.com/public_html/vendor/symfony/finder/Finder.php:649)
+[stacktrace]
+#0 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(86): Symfony\\Component\\Finder\\Finder->in()
+#1 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(63): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->getConfigurationFiles()
+#2 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles()
+#3 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(263): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap()
+#4 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(186): Illuminate\\Foundation\\Application->bootstrapWith()
+#5 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(170): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#6 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#7 /home/u972418887/domains/eomshopping.com/public_html/public/index.php(56): Illuminate\\Foundation\\Http\\Kernel->handle()
+#8 {main}
+"} 
+[2026-01-09 17:24:13] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:212)
+[stacktrace]
+#0 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(137): Illuminate\\Log\\LogManager->resolve()
+#1 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(124): Illuminate\\Log\\LogManager->get()
+#2 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(681): Illuminate\\Log\\LogManager->driver()
+#3 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(317): Illuminate\\Log\\LogManager->error()
+#4 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(278): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(497): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->reportException()
+#7 /home/u972418887/domains/eomshopping.com/public_html/public/index.php(56): Illuminate\\Foundation\\Http\\Kernel->handle()
+#8 {main}
+"} 
+[2026-01-09 17:24:13] laravel.ERROR: The "" directory does not exist. {"exception":"[object] (Symfony\\Component\\Finder\\Exception\\DirectoryNotFoundException(code: 0): The \"\" directory does not exist. at /home/u972418887/domains/eomshopping.com/public_html/vendor/symfony/finder/Finder.php:649)
+[stacktrace]
+#0 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(86): Symfony\\Component\\Finder\\Finder->in()
+#1 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(63): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->getConfigurationFiles()
+#2 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles()
+#3 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(263): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap()
+#4 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(186): Illuminate\\Foundation\\Application->bootstrapWith()
+#5 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(170): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#6 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#7 /home/u972418887/domains/eomshopping.com/public_html/public/index.php(56): Illuminate\\Foundation\\Http\\Kernel->handle()
+#8 {main}
+"} 
+[2026-01-09 17:24:15] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:212)
+[stacktrace]
+#0 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(137): Illuminate\\Log\\LogManager->resolve()
+#1 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(124): Illuminate\\Log\\LogManager->get()
+#2 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(681): Illuminate\\Log\\LogManager->driver()
+#3 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(317): Illuminate\\Log\\LogManager->error()
+#4 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(278): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(497): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->reportException()
+#7 /home/u972418887/domains/eomshopping.com/public_html/public/index.php(56): Illuminate\\Foundation\\Http\\Kernel->handle()
+#8 {main}
+"} 
+[2026-01-09 17:24:15] laravel.ERROR: The "" directory does not exist. {"exception":"[object] (Symfony\\Component\\Finder\\Exception\\DirectoryNotFoundException(code: 0): The \"\" directory does not exist. at /home/u972418887/domains/eomshopping.com/public_html/vendor/symfony/finder/Finder.php:649)
+[stacktrace]
+#0 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(86): Symfony\\Component\\Finder\\Finder->in()
+#1 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(63): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->getConfigurationFiles()
+#2 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles()
+#3 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(263): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap()
+#4 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(186): Illuminate\\Foundation\\Application->bootstrapWith()
+#5 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(170): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#6 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#7 /home/u972418887/domains/eomshopping.com/public_html/public/index.php(56): Illuminate\\Foundation\\Http\\Kernel->handle()
+#8 {main}
+"} 
+[2026-01-09 17:24:18] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:212)
+[stacktrace]
+#0 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(137): Illuminate\\Log\\LogManager->resolve()
+#1 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(124): Illuminate\\Log\\LogManager->get()
+#2 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(681): Illuminate\\Log\\LogManager->driver()
+#3 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(317): Illuminate\\Log\\LogManager->error()
+#4 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(278): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(497): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->reportException()
+#7 /home/u972418887/domains/eomshopping.com/public_html/public/index.php(56): Illuminate\\Foundation\\Http\\Kernel->handle()
+#8 {main}
+"} 
+[2026-01-09 17:24:18] laravel.ERROR: The "" directory does not exist. {"exception":"[object] (Symfony\\Component\\Finder\\Exception\\DirectoryNotFoundException(code: 0): The \"\" directory does not exist. at /home/u972418887/domains/eomshopping.com/public_html/vendor/symfony/finder/Finder.php:649)
+[stacktrace]
+#0 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(86): Symfony\\Component\\Finder\\Finder->in()
+#1 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(63): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->getConfigurationFiles()
+#2 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles()
+#3 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(263): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap()
+#4 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(186): Illuminate\\Foundation\\Application->bootstrapWith()
+#5 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(170): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#6 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#7 /home/u972418887/domains/eomshopping.com/public_html/public/index.php(56): Illuminate\\Foundation\\Http\\Kernel->handle()
+#8 {main}
+"} 
+[2026-01-09 17:24:22] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:212)
+[stacktrace]
+#0 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(137): Illuminate\\Log\\LogManager->resolve()
+#1 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(124): Illuminate\\Log\\LogManager->get()
+#2 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(681): Illuminate\\Log\\LogManager->driver()
+#3 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(317): Illuminate\\Log\\LogManager->error()
+#4 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(278): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(497): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->reportException()
+#7 /home/u972418887/domains/eomshopping.com/public_html/public/index.php(56): Illuminate\\Foundation\\Http\\Kernel->handle()
+#8 {main}
+"} 
+[2026-01-09 17:24:22] laravel.ERROR: The "" directory does not exist. {"exception":"[object] (Symfony\\Component\\Finder\\Exception\\DirectoryNotFoundException(code: 0): The \"\" directory does not exist. at /home/u972418887/domains/eomshopping.com/public_html/vendor/symfony/finder/Finder.php:649)
+[stacktrace]
+#0 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(86): Symfony\\Component\\Finder\\Finder->in()
+#1 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(63): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->getConfigurationFiles()
+#2 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles()
+#3 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(263): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap()
+#4 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(186): Illuminate\\Foundation\\Application->bootstrapWith()
+#5 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(170): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#6 /home/u972418887/domains/eomshopping.com/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#7 /home/u972418887/domains/eomshopping.com/public_html/public/index.php(56): Illuminate\\Foundation\\Http\\Kernel->handle()
+#8 {main}
+"} 

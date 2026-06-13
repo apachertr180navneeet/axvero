@@ -27,7 +27,7 @@
 					<!-- Home Classic -->
 					<div class="col-xxl-3 col-lg-4 col-sm-6 my-3">
 						<label class="aiz-megabox d-block mb-3">
-							<input value="classic" type="radio" name="homepage_select" @if((get_setting('homepage_select', 'classic') == null) || (get_setting('homepage_select', 'classic') == 'classic')) checked @endif>
+							<input value="classic" type="radio" name="homepage_select" @if((get_setting('homepage_select') == null) || (get_setting('homepage_select') == 'classic')) checked @endif>
 							<span class="d-block aiz-megabox-elem rounded-0 img-overlay">
 								<div class="h-350px w-100 overflow-hidden">
 									<img src="{{ static_asset('assets/img/pages/home-classic.webp') }}" class="w-100" alt="home-page-1">
@@ -45,7 +45,7 @@
 					<!-- Home Metro -->
 					<div class="col-xxl-3 col-lg-4 col-sm-6 my-3">
 						<label class="aiz-megabox d-block mb-3">
-							<input value="metro" type="radio" name="homepage_select" @if(get_setting('homepage_select', 'classic') == 'metro') checked @endif>
+							<input value="metro" type="radio" name="homepage_select" @if(get_setting('homepage_select') == 'metro') checked @endif>
 							<span class="d-block aiz-megabox-elem rounded-0 img-overlay">
 								<div class="h-350px w-100 overflow-hidden">
 									<img src="{{ static_asset('assets/img/pages/home-metro.webp') }}" class="w-100" alt="home-page-2">
@@ -63,7 +63,7 @@
 					<!-- Home Minima -->
 					<div class="col-xxl-3 col-lg-4 col-sm-6 my-3">
 						<label class="aiz-megabox d-block mb-3">
-							<input value="minima" type="radio" name="homepage_select" @if(get_setting('homepage_select', 'classic') == 'minima') checked @endif>
+							<input value="minima" type="radio" name="homepage_select" @if(get_setting('homepage_select') == 'minima') checked @endif>
 							<span class="d-block aiz-megabox-elem rounded-0 img-overlay">
 								<div class="h-350px w-100 overflow-hidden">
 									<img src="{{ static_asset('assets/img/pages/home-minima.webp') }}" class="w-100" alt="home-page-3">
@@ -81,7 +81,7 @@
 					<!-- Home Megamart -->
 					<div class="col-xxl-3 col-lg-4 col-sm-6 my-3">
 						<label class="aiz-megabox d-block mb-3">
-							<input value="megamart" type="radio" name="homepage_select" @if(get_setting('homepage_select', 'classic') == 'megamart') checked @endif>
+							<input value="megamart" type="radio" name="homepage_select" @if(get_setting('homepage_select') == 'megamart') checked @endif>
 							<span class="d-block aiz-megabox-elem rounded-0 img-overlay">
 								<div class="h-350px w-100 overflow-hidden">
 									<img src="{{ static_asset('assets/img/pages/home-megamart.webp') }}" class="w-100" alt="home-page-4">
@@ -99,7 +99,7 @@
 					<!-- Home Re-Classic -->
 					<div class="col-xxl-3 col-lg-4 col-sm-6 my-3">
 						<label class="aiz-megabox d-block mb-3">
-							<input value="reclassic" type="radio" name="homepage_select" @if(get_setting('homepage_select', 'classic') == 'reclassic') checked @endif>
+							<input value="reclassic" type="radio" name="homepage_select" @if(get_setting('homepage_select') == 'reclassic') checked @endif>
 							<span class="d-block aiz-megabox-elem rounded-0 img-overlay">
 								<div class="h-350px w-100 overflow-hidden">
 									<img src="{{ static_asset('assets/img/pages/home-reclassic.webp') }}" class="w-100" alt="home-page-5">
@@ -118,7 +118,7 @@
 					<!-- Home Edge -->
 					<div class="col-xxl-3 col-lg-4 col-sm-6 my-3">
 						<label class="aiz-megabox d-block mb-3">
-							<input value="thecore" type="radio" name="homepage_select" @if(get_setting('homepage_select', 'classic') == 'thecore') checked @endif>
+							<input value="thecore" type="radio" name="homepage_select" @if(get_setting('homepage_select') == 'thecore') checked @endif>
 							<span class="d-block aiz-megabox-elem rounded-0 img-overlay">
 								<div class="h-350px w-100 overflow-hidden">
 									<img src="{{ static_asset('assets/img/pages/home-thecore.png') }}" class="w-100" alt="home-page-6">

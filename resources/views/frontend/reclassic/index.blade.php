@@ -39,7 +39,7 @@
         }
     </style>
 
-    @php $lang = get_system_language()?->code ?? 'en';  @endphp
+    @php $lang = get_system_language()->code;  @endphp
 
     <!-- home banner area -->
     <div class="home-banner-area mb-3" style="">
@@ -47,7 +47,7 @@
             <div class="row gutters-12 position-relative">
                 <!-- category menu -->
                 <div class="position-static d-none d-xl-block col-auto">
-                    @include('frontend.'.get_setting("homepage_select", "classic").'.partials.category_menu')
+                    @include('frontend.'.get_setting("homepage_select").'.partials.category_menu')
                 </div>
 
                 <div class="col-lg mt-4">

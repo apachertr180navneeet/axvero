@@ -2,7 +2,7 @@
     <section class="">
         <div class="container">
             @php
-                $lang = get_system_language()?->code ?? 'en';
+                $lang = get_system_language()->code;
                 $todays_deal_banner = get_setting('todays_deal_banner', null, $lang);
                 $todays_deal_banner_small = get_setting('todays_deal_banner_small', null, $lang);
             @endphp

@@ -698,7 +698,7 @@ $bottomHeaderTextColor = get_setting('bottom_header_text_color');
             <div class="container">
                 <div class="d-flex position-relative">
                     <div class="position-static">
-                        @include('frontend.' . get_setting('homepage_select', 'classic') . '.partials.category_menu')
+                        @include('frontend.' . get_setting('homepage_select') . '.partials.category_menu')
                     </div>
                 </div>
             </div>

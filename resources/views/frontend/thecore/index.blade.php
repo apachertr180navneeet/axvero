@@ -15,7 +15,7 @@
 }
 
 </style>
-@php $lang = get_system_language()?->code ?? 'en'; @endphp
+@php $lang = get_system_language()->code; @endphp
 <div class="pt-32px pb-26px" style="background: {{ get_setting('hero_bg_color', '#f5f5f5') }}">
     <div class="container">
         <div class="row">
@@ -143,7 +143,7 @@
     </div>
 </div>
 
-<input type="hidden" id="selected_homepage" value="{{get_setting('homepage_select', 'classic')}}">
+<input type="hidden" id="selected_homepage" value="{{get_setting('homepage_select')}}">
 
 @if (count($featured_categories) > 0)
 <!-- Featured Category -->
