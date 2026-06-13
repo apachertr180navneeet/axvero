@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Cart')
 @section('content')
     <!-- Cart Details -->
     <section class="my-4" id="cart-details">

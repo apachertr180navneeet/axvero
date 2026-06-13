@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Customer Packages')
 @section('content')
     <section class="py-8 bg-primary text-white">
         <div class="container">

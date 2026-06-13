@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Featured Products')
 @section('content')
     <section class="mb-5" style="margin-top: 2rem;">
         <div class="container">

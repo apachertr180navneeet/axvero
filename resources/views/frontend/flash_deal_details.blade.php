@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', $flash_deal->title)
 @section('content')
     <section class="mb-5 mt-3">
         <div class="container">

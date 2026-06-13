@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Track Order')
 @section('content')
     <section class="pt-4 mb-4">
         <div class="container text-center">

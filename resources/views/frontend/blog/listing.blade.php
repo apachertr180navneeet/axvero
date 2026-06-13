@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Blog')
 @section('content')
     <section class="pb-4 pt-5">
         <div class="container">

@@ -1,4 +1,5 @@
 @extends('frontend.layouts.app')
+@section('meta_title', $customer_product->meta_title)
 @section('meta')
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="{{ $customer_product->meta_title }}">

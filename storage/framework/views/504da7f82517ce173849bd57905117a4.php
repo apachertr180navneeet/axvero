@@ -1,5 +1,5 @@
 
-
+<?php $__env->startSection('meta_title', 'Home'); ?>
 <?php $__env->startSection('content'); ?>
 <style>
     @media (max-width: 767px) {

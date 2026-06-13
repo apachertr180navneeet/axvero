@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Wallet Recharge')
 @section('content')
 <section class="text-center py-6">
 	<div class="container">

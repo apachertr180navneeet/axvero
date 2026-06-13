@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Compare Products')
 @section('content')
 
     <section class="mb-4 mt-3">

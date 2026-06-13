@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'All Brands')
 @section('content')
     <!-- Breadcrumb -->
     <section class="mb-4 pt-4">

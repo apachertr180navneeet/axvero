@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Home')
 @section('content')
     <style>
         #section_featured .slick-slider .slick-list{

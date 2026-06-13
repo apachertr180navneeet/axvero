@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Authorize.Net Payment')
 @section('content')
 
 @php

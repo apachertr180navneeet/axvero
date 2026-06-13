@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Join as Agent')
 @section('content')
 
 <div class="container py-5">

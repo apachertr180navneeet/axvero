@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Seller Package Payment')
 @section('content')
-@php
+    @php
     $seller_package = get_single_seller_package(Session::get('payment_data')['seller_package_id']);
 @endphp
    

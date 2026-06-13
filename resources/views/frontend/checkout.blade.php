@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Checkout')
 @section('content')
 
     <section class="my-4 gry-bg">

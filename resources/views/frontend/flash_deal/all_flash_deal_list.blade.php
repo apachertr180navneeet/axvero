@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Flash Deals')
 @section('content')
     <div class="position-relative">
         <div class="position-absolute" id="particles-js"></div>

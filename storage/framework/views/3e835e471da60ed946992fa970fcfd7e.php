@@ -16,7 +16,7 @@
     <meta name="app-url" content="<?php echo e(getBaseURL()); ?>">
     <meta name="file-base-url" content="<?php echo e(getFileBaseURL()); ?>">
 
-    <title><?php echo $__env->yieldContent('meta_title', get_setting('website_name') . ' | ' . get_setting('site_motto')); ?></title>
+    <title><?php echo e(get_setting('website_name')); ?> | <?php echo $__env->yieldContent('meta_title', 'Home'); ?></title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

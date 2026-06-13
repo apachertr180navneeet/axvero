@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Customer Package Payment')
 @section('content')
     @php
         $customer_package = get_single_customer_package(Session::get('payment_data')['customer_package_id']);

@@ -1,5 +1,5 @@
 @extends('frontend.layouts.app')
-
+@section('meta_title', 'Coupons')
 @section('content')
 
 <section id="coupons" class="bg-white pb-5">
