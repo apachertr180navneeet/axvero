@@ -191,7 +191,7 @@ if (!function_exists('get_system_default_currency')) {
     function get_system_default_currency()
     {
         return Cache::remember('system_default_currency', 86400, function () {
-            return Currency::findOrFail(get_setting('system_default_currency'));
+            return Currency::find(get_setting('system_default_currency')) ?? Currency::first();
         });
     }
 }
